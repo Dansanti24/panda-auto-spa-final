@@ -1,0 +1,59 @@
+.section {
+  background: var(--black-soft);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.details {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 15px;
+  color: var(--gray-light);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.input {
+  background: var(--black-card);
+  border: 1px solid var(--border);
+  color: var(--white);
+  padding: 14px 18px;
+  font-size: 14px;
+  outline: none;
+  width: 100%;
+  transition: border-color 0.2s;
+  resize: vertical;
+  font-family: 'Outfit', sans-serif;
+}
+
+.input:focus {
+  border-color: var(--red);
+}
+
+.success {
+  color: #4ade80;
+  font-size: 14px;
+}
+
+.error {
+  color: var(--red);
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
