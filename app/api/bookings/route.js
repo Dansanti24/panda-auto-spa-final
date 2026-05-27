@@ -2,16 +2,6 @@ import { NextResponse } from 'next/server';
 import connectDB from '../../../lib/db';
 import Booking from '../../../models/Booking';
 
-export async function GET() {
-  try {
-    await connectDB();
-    const bookings = await Booking.find().sort({ createdAt: -1 });
-    return NextResponse.json(bookings);
-  } catch (err) {
-    return NextResponse.json({ error: 'Failed to fetch bookings' }, { status: 500 });
-  }
-}
-
 export async function POST(request) {
   try {
     await connectDB();
@@ -23,6 +13,18 @@ export async function POST(request) {
     const booking = await Booking.create(body);
     return NextResponse.json({ message: 'Booking confirmed!', booking }, { status: 201 });
   } catch (err) {
-    return NextResponse.json({ error: 'Failed to create booking' }, { status: 500 });
+    console.error('BOOKING ERROR:', err.message, err.stack);
+    return NextResponse.json({ error: 'Failed to create booking', details: err.message }, { status: 500 });
+  }
+}
+
+export async function GET() {
+  try {
+    await connectDB();
+    const bookings = await Booking.find().sort({ createdAt: -1 });
+    return NextResponse.json(bookings);
+  } catch (err) {
+    console.error('GET BOOKINGS ERROR:', err.message);
+    return NextResponse.json({ error: 'Failed to fetch bookings' }, { status: 500 });
   }
 }
