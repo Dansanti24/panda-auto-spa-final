@@ -1,0 +1,110 @@
+.section {
+  background: var(--black-soft);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2px;
+  margin-top: 60px;
+}
+
+.card {
+  background: var(--black-card);
+  padding: 36px;
+  border: 1px solid var(--border);
+  transition: border-color 0.2s, transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card:hover {
+  border-color: var(--red);
+  transform: translateY(-4px);
+}
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.cardTitle {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 24px;
+  letter-spacing: 0.04em;
+  color: var(--white);
+}
+
+.price {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px;
+  color: var(--red);
+  white-space: nowrap;
+}
+
+.duration {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--gray);
+}
+
+.desc {
+  font-size: 14px;
+  color: var(--gray-light);
+  line-height: 1.6;
+  flex: 1;
+}
+
+.bookBtn {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--red);
+  text-transform: uppercase;
+  transition: letter-spacing 0.2s;
+}
+
+.bookBtn:hover {
+  letter-spacing: 0.14em;
+}
+
+.addons {
+  margin-top: 80px;
+  padding: 48px;
+  background: var(--black-card);
+  border: 1px solid var(--border);
+}
+
+.addonsTitle {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 32px;
+  color: var(--white);
+  margin-bottom: 32px;
+  letter-spacing: 0.04em;
+}
+
+.addonsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.addon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background: var(--black-soft);
+  border: 1px solid var(--border);
+  font-size: 14px;
+  color: var(--gray-light);
+}
+
+.addonPrice {
+  color: var(--red);
+  font-weight: 600;
+}
